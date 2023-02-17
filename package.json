@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js --exec babel-node"
+    "start": "nodemon src/index.js --exec babel-node",
+    "build": "babel src -d dist && ncp src/views dist/views && ncp src/public dist/public"
   },
   "keywords": [],
   "author": "lupilp",
@@ -20,7 +21,10 @@
     "@babel/cli": "^7.20.7",
     "@babel/core": "^7.20.12",
     "@babel/node": "^7.20.7",
+    "@babel/plugin-transform-regenerator": "^7.20.5",
+    "@babel/plugin-transform-runtime": "^7.19.6",
     "@babel/preset-env": "^7.20.2",
+    "ncp": "^2.0.0",
     "nodemon": "^2.0.20"
   }
 }
