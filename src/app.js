@@ -2,6 +2,7 @@ import express from "express";
 import indexRoutes from "./routes/index.routes";
 import { engine } from "express-handlebars";
 import path from "path";
+import morgan from "morgan";
 
 const app = express();
 
@@ -16,6 +17,9 @@ app.engine(
   })
 );
 app.set("view engine", ".hbs");
+
+app.use(morgan("dev")); // Middleware
+app.use(express.urlencoded({ extended: false }));
 
 app.use(indexRoutes);
 
