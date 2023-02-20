@@ -1,33 +1,29 @@
-<table>
-  <thead>
-    <tr>
-      <th>N.</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Operations</th>
-    </tr>
-  </thead>
+{{#if tasks}}
+  {{#each tasks}}
+    <div class="table-general">
 
-  <tbody>
-    {{#each tasks}}
-      <tr>
-        <td>{{@index}}</td>
-        <td>
+      <div>
+
+        <div class="table-title">
           {{title}}
-        </td>
-        <td>{{description}}</td>
-        <td>
+        </div>
+        <div class="table-description">
+          {{description}}
+        </div>
+      </div>
+      <div class="operations">
 
-          {{#if done}}
-            <a href="/toggleDone/{{_id}}">Undone</a>
-          {{else}}
-            <a href="/toggleDone/{{_id}}">Done</a>
-          {{/if}}
+        {{#if done}}
+          <a href="/toggleDone/{{_id}}">Undone</a>
+        {{else}}
+          <a href="/toggleDone/{{_id}}">Done</a>
+        {{/if}}
 
-          <a href="/delete/{{_id}}">Delete</a>
-          <a href="/edit/{{_id}}">Update</a>
-        </td>
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
+        <a href="/delete/{{_id}}">Delete</a>
+        <a href="/edit/{{_id}}">Update</a>
+      </div>
+    </div>
+  {{/each}}
+{{else}}
+  <div>No Tasks</div>
+{{/if}}
