@@ -1,15 +1,28 @@
+<div class="form-container-edit">
 
+  <div class="form-text">
+    <div class="icon-text"></div>
+    Edit your task
+  </div>
 
-<form action="/edit/{{task._id}}" method="POST">
+  <form action="/edit/{{task._id}}" method="POST" class="form-create-task">
 
-  <input type="text" name="title" placeholder="Title" value="{{task.title}}" />
+    <input
+      type="text"
+      name="title"
+      placeholder="Title"
+      value="{{task.title}}"
+      class="form-title"
+    />
 
-  <textarea
-    name="description"
-    rows="3"
-    placeholder="Description"
-  >{{task.description}}</textarea>
+    <textarea
+      name="description"
+      rows="3"
+      placeholder="Description"
+      class="form-description"
+    >{{task.description}}</textarea>
 
-  <button>Update</button>
+    <button class="form-button">Update</button>
 
-</form>
+  </form>
+</div>

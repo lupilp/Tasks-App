@@ -1,29 +1,56 @@
 {{#if tasks}}
   {{#each tasks}}
     <div class="table-general">
+      {{#if done}}
+        <div class="task-done">
 
-      <div>
+          <div class="table-title">
+            <del>{{title}}</del>
+          </div>
+          <div class="table-description">
+            <del>{{description}}</del>
+          </div>
+        </div>
+      {{else}}
+        <div>
 
-        <div class="table-title">
-          {{title}}
+          <div class="table-title">
+            {{title}}
+          </div>
+          <div class="table-description">
+            {{description}}
+          </div>
         </div>
-        <div class="table-description">
-          {{description}}
-        </div>
-      </div>
+      {{/if}}
       <div class="operations">
 
         {{#if done}}
-          <a href="/toggleDone/{{_id}}">Undone</a>
+          <a href="/toggleDone/{{_id}}"><img
+              src="/Icons/FaTimes.svg"
+              alt="undone"
+              class="undone"
+            /></a>
         {{else}}
-          <a href="/toggleDone/{{_id}}">Done</a>
+          <a href="/toggleDone/{{_id}}"><img
+              src="/Icons/FaCheck.svg"
+              alt="done"
+              class="done"
+            /></a>
         {{/if}}
 
-        <a href="/delete/{{_id}}">Delete</a>
-        <a href="/edit/{{_id}}">Update</a>
+        <a href="/delete/{{_id}}"><img
+            src="/Icons/FaTrash.svg"
+            alt="delete"
+            class="delete"
+          /></a>
+        <a href="/edit/{{_id}}"><img
+            src="/Icons/FaEdit.svg"
+            alt="edit"
+            class="edit"
+          /></a>
       </div>
     </div>
   {{/each}}
 {{else}}
-  <div>No Tasks</div>
+  <div class="no-tasks">There are no tasks at the moment...</div>
 {{/if}}
