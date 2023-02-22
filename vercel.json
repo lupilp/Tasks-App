@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "babel src -d dist && ncp src/views dist/views && ncp src/public dist/public",
+      "src": ".dist",
       "use": "@vercel/node"
     }
   ],
