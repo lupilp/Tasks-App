@@ -15,12 +15,6 @@
   "env": {
     "NODE_ENV": "production"
   },
-  "functions": {
-    "api/**/*": {
-      "memory": 128,
-      "maxDuration": 10
-    }
-  },
   "rewrites": [
     {
       "source": "/(.*)",
